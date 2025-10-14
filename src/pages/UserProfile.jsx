@@ -7,7 +7,7 @@ import TeamList from "../components/TeamList.jsx";
 // import {UpdateProfile} from "./updateProfile.jsx";
 // import useNavigate from "react-router-dom";
 
-
+const backend_api = import.meta.env.VITE_API_URL;
 const UserProfile = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState("");
@@ -22,7 +22,7 @@ const UserProfile = () => {
             }
 
             try {
-                const response = await fetch("http://localhost:5000/api/user/me", {
+                const response = await fetch(`${backend_api}/api/user/me`, {
                     method: "GET",
                     headers: {
                         "Authorization": `Bearer ${token}`,

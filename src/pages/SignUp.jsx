@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
+const backend_api = import.meta.env.VITE_API_URL;
 const SignUp_form = () =>{
 
     let [username, setUsername] = useState('');
@@ -25,7 +26,7 @@ const SignUp_form = () =>{
             if(!emailRegex.test(email)) {
                 throw new Error("Invalid email format");
             }
-            const response = await fetch("http://localhost:5000/api/auth/register", {
+            const response = await fetch(`${backend_api}/api/auth/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

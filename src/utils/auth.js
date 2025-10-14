@@ -1,5 +1,5 @@
 import {jwtDecode} from "jwt-decode";
-
+const backend_api = import.meta.env.VITE_API_URL;
 function isTokenexpired(token){
     try{
         const decode = jwtDecode(token);
@@ -14,7 +14,7 @@ export async function getAccessToken() {
     let accessToken = localStorage.getItem("accessToken");
     if(!accessToken || isTokenexpired(accessToken)){
         try{
-            const response = await fetch("http://localhost:5000/api/auth/refresh", {
+            const response = await fetch(`${backend_api}//api/auth/refresh`, {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -38,7 +38,7 @@ export async function getAccessToken() {
 export async function logout(navigate){
     try{
         localStorage.removeItem("accessToken");
-        const res = await fetch("http://localhost:5000/api/auth/logout", {
+        const res = await fetch(`${backend_api}/api/auth/logout`, {
             method: "POST",
             credentials: "include",
         });

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useNavigate } from "react-router-dom";
 
-
+const backend_api = import.meta.env.VITE_API_URL;
 const Login = () => {
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
@@ -17,7 +17,7 @@ const Login = () => {
             if(!emailRegex.test(email)){
                 throw new Error("Invalid email format");
             }
-            const response = await fetch("http://localhost:5000/api/auth/login", {
+            const response = await fetch(`${backend_api}/api/auth/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

@@ -1,6 +1,7 @@
+const backend_api = import.meta.env.VITE_API_URL;
 export const getTeams = async() =>{
     const token = localStorage.getItem("accessToken");
-    const res = await fetch("http://localhost:5000/api/team", {
+    const res = await fetch(`${backend_api}/api/team`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -18,7 +19,7 @@ export const getTeams = async() =>{
 
 export const createTeam = async(name) =>{
     const token = localStorage.getItem("accessToken");
-    const res = await fetch("http://localhost:5000/api/team", {
+    const res = await fetch(`${backend_api}/api/team`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -35,7 +36,7 @@ export const createTeam = async(name) =>{
 
 export const inviteUser = async(teamId, email, role) => {
     const token = localStorage.getItem("accessToken");
-    const res = await fetch(`http://localhost:5000/api/team/${teamId}/invite`, {
+    const res = await fetch(`${backend_api}/api/team/${teamId}/invite`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
