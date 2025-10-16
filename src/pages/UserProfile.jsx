@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {getAccessToken} from "../utils/auth.js";
-import Navbar from "../components/navbar.jsx";
+import Navbar from "../components/Navbar.jsx";
 import {Link} from "react-router-dom";
 import TeamForm from "../components/TeamForm.jsx";
 import TeamList from "../components/TeamList.jsx";
