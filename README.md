@@ -1,11 +1,5 @@
+#  FINAL README — FRONTEND (REACT)
 
----
-
-# 🎨 FINAL README — FRONTEND (REACT)
-
-📄 **`task-management-frontend/README.md`**
-
-```md
 # Task Management Frontend
 
 Frontend application for a real-time team and task management platform,
@@ -22,7 +16,7 @@ providing collaborative task updates, notifications, and presence indicators.
 - React
 - REST APIs
 - WebSockets
-- CSS / Tailwind / MUI (as applicable)
+- Tailwind
 
 ## Backend Dependency
 This frontend requires the backend service to be running.
@@ -34,11 +28,11 @@ Backend Repository:
 
 ### Prerequisites
 - Node.js (v16+)
-- npm or yarn
+- npm
 
 ### Setup
 ```bash
 git clone https://github.com/yourusername/task-management-frontend.git
-cd task-management-frontend
+cd Teamsync-frontend
 npm install
-npm start
+npm run dev
