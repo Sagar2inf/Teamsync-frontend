@@ -22,7 +22,7 @@ providing collaborative task updates, notifications, and presence indicators.
 This frontend requires the backend service to be running.
 
 Backend Repository:
-👉 https://github.com/yourusername/task-management-backend
+👉 https://github.com/Sagar2inf/Teamsync-backend
 
 ## Getting Started
 
